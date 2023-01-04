@@ -5,7 +5,7 @@ import me.cpjinan.playerwhitelist.manager.FormatManager
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent
 import taboolib.common.platform.event.SubscribeEvent
 
-object BanEvent {
+object WhitelistEvent {
 
     /**
      * 玩家登入事件处理方法
