@@ -1,5 +1,6 @@
 package me.cpjinan.playerwhitelist.listener
 
+import me.cpjinan.playerwhitelist.manager.ConfigManager
 import me.cpjinan.playerwhitelist.manager.ConfigManager.whitelist
 import me.cpjinan.playerwhitelist.manager.FormatManager
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent
@@ -12,7 +13,7 @@ object WhitelistEvent {
      */
     @SubscribeEvent
     fun onPlayerLogin(event : AsyncPlayerPreLoginEvent) {
-        if ((whitelist.getList("player")?.contains(event.name)?:event.allow()) == false) event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_BANNED,FormatManager.getWhitelistFormat(event.name))
+        if (ConfigManager.whitelist.getBoolean("enable") && ((whitelist.getList("player")?.contains(event.name)?:event.allow()) == false)) event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_BANNED,FormatManager.getWhitelistFormat(event.name))
     }
 
 }
