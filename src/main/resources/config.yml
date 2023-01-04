@@ -1,0 +1,19 @@
+# 全局设置
+options:
+  # bStats数据统计
+  metrics: true
+# 模块设置
+module:
+  # 白名单模块
+  whitelist:
+    # 启用白名单模块
+    enable: true
+    # 白名单消息格式
+    format:
+      - "&c您已被管理员从服务器请出！"
+      - ""
+      - "&7请出原因: &f您不在该服务器白名单中！"
+      - "&7查看详情: &b&nhttps://www.mcbbs.net/"
+      - ""
+      - "&7事件ID: &f{0}"
+    player: []
