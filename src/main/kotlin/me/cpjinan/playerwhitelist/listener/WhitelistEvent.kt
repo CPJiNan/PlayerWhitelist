@@ -12,7 +12,7 @@ object WhitelistEvent {
      */
     @SubscribeEvent
     fun onPlayerLogin(event : AsyncPlayerPreLoginEvent) {
-        if ((whitelist.getList("player")?.contains(event.name)?:event.allow()) == true) event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_BANNED,FormatManager.getWhitelistFormat(event.name))
+        if ((whitelist.getList("player")?.contains(event.name)?:event.allow()) == false) event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_BANNED,FormatManager.getWhitelistFormat(event.name))
     }
 
 }
