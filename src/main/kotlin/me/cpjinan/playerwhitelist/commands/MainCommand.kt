@@ -23,6 +23,7 @@ object MainCommand {
             execute<ProxyCommandSender> { sender, context, _ ->
                 whitelist["player"] = whitelist.getStringList("player").plus(context.get(1))
                 config.saveToFile(config.file)
+                sender.sendMessage(("&a已添加玩家 &f"+context.get(1)+" &a至白名单！").colored())
             }
         }
     }
@@ -35,6 +36,7 @@ object MainCommand {
                 playerList.removeIf { it == context.get(1) }
                 whitelist["player"] = playerList.toList()
                 config.saveToFile(config.file)
+                sender.sendMessage(("&c已将玩家 &f"+context.get(1)+" &c从白名单删除！").colored())
             }
         }
     }
